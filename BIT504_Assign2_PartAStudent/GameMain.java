@@ -108,17 +108,17 @@ public class GameMain extends JPanel implements MouseListener{
 					statusBar.setText("O's Turn");
 					
 				}       
-			} else if (currentState == GameState.Draw) {          
-				statusBar.setForeground(Color.RED);          
-				statusBar.setText("It's a Draw! Click to play again.");       
-			} else if (currentState == GameState.Cross_won) {          
-				statusBar.setForeground(Color.RED);          
-				statusBar.setText("'X' Won! Click to play again.");       
-			} else if (currentState == GameState.Nought_won) {          
-				statusBar.setForeground(Color.RED);          
-				statusBar.setText("'O' Won! Click to play again.");       
-			}
+		} else if (currentState == GameState.Draw) {          
+			statusBar.setForeground(Color.RED);          
+			statusBar.setText("It's a Draw! Click to play again.");       
+		} else if (currentState == GameState.Cross_won) {          
+			statusBar.setForeground(Color.RED);          
+			statusBar.setText("'X' Won! Click to play again.");       
+		} else if (currentState == GameState.Nought_won) {          
+		   statusBar.setForeground(Color.RED);          
+			statusBar.setText("'O' Won! Click to play again.");       
 		}
+	}
 		
 	
 	  /** Initialise the game-board contents and the current status of GameState and Player) */
@@ -148,11 +148,11 @@ public class GameMain extends JPanel implements MouseListener{
 				}else {
 					currentState = GameState.Nought_won;	
 				}
-				// TODO: set the currentstate to the draw gamestate
-				if (board.isDraw ()) {
-					currentState = GameState.Draw;
-				}
 			  }	
+			// TODO: set the currentstate to the draw gamestate
+			else if (board.isDraw ()) {
+				currentState = GameState.Draw;
+			}
 			//otherwise no change to current state of playing
 			}
 				
