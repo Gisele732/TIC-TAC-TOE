@@ -29,7 +29,7 @@ public class GameMain extends JPanel implements MouseListener{
 	/*declare game object variables*/
 	// the game board 
 	private Board board;
-	//create the enumeration for the variable below (GameState currentState)
+	//TODO: create the enumeration for the variable below (GameState currentState)
 	//HINT all of the states you require are shown in the code within GameMain
 	private GameState currentState; 
 	// the current player
@@ -58,10 +58,10 @@ public class GameMain extends JPanel implements MouseListener{
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
 		
 		
-		//Create a new instance of the game "Board"class. HINT check the variables above for the correct name
+		//TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
 		board = new Board();
 		
-		//call the method to initialise the game board
+		//TODO: call the method to initialise the game board
 		initGame();
 
 	}
@@ -73,11 +73,11 @@ public class GameMain extends JPanel implements MouseListener{
 				//create a main window to contain the panel
 				JFrame frame = new JFrame(TITLE);
 				
-				//create the new GameMain panel and add it to the frame
+				//TODO:create the new GameMain panel and add it to the frame
 				frame.add(new GameMain());
 				
 				
-				//set the default close operation of the frame to exit_on_close
+				//TODO: set the default close operation of the frame to exit_on_close
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 				frame.pack();             
