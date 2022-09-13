@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 
 
 public class GameMain extends JPanel implements MouseListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Constants for game 
 	// number of ROWS by COLS cell constants 
 	public static final int ROWS = 3;     
@@ -32,6 +36,7 @@ public class GameMain extends JPanel implements MouseListener{
 	//TODO: create the enumeration for the variable below (GameState currentState)
 	//HINT all of the states you require are shown in the code within GameMain
 	private GameState currentState; 
+	//STUDENT NOTE: see GameState.java
 	// the current player
 	private Player currentPlayer; 
 	// for displaying game status message
@@ -60,9 +65,11 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		//TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
 		board = new Board();
+		//STUDENT NOTE: created from variable on line 35
 		
 		//TODO: call the method to initialise the game board
 		initGame();
+		//STUDENT NOTE: this method below sets all variable to default values.
 
 	}
 	
@@ -79,6 +86,7 @@ public class GameMain extends JPanel implements MouseListener{
 				
 				//TODO: set the default close operation of the frame to exit_on_close
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				//STUDENT NOTE: JFrame.EXIT_ON_CLOSE exits the application and releases the memory
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
@@ -147,12 +155,15 @@ public class GameMain extends JPanel implements MouseListener{
 					currentState = GameState.Cross_won;
 				}else {
 					currentState = GameState.Nought_won;	
-				}
+				}//STUDENT NOTE: if hasWon() returns true, one of the players has won
+				//(it is not a Draw). Check for Cross win first, else Nought has won.
 			  }	
 			// TODO: set the currentstate to the draw gamestate
 			else if (board.isDraw ()) {
 				currentState = GameState.Draw;
-			}
+			}//STUDENT NOTE: if hasWon() returns false, check if isDraw() returns true.
+			//If so, it's a draw.
+			
 			//otherwise no change to current state of playing
 			}
 				
@@ -189,6 +200,8 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		//TODO: redraw the graphics on the UI          
            repaint();
+         //STUDENT NOTE: repaint() method draws objects onto the screen again (from built-in
+         // Graphics class).
 	}
 		
 	

@@ -15,6 +15,8 @@ public class Board {
 		
 	 //TODO: initialise the cells array using ROWS and COLS constants 
 		cells = new Cell[GameMain.ROWS][GameMain.COLS];
+		//STUDENT NOTE: ROWS and COLS constants declared in GameMain class 
+		//will initialise cells and rows of cell object according to constructor in Cell class
 		
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++col) {
@@ -29,10 +31,10 @@ public class Board {
 		// TODO: Check whether the game has ended in a draw. 
 		// Hint: Use a nested loop (see the constructor for an example). Check whether any of the cells content in the board grid are Player.Empty. If they are, it is not a draw.
 		// Hint: Return false if it is not a draw, return true if there are no empty positions left
-		for(int row = 0; row < GameMain.ROWS; ++row) {
-			for (int col = 0; col < GameMain.COLS; ++col) {             
-				if (cells[row][col].content == Player.Empty) {
-					return false; //it is not a draw if there is an empty cell  
+		for(int row = 0; row < GameMain.ROWS; ++row) {//STUDENT NOTE: checks all cells in rows
+			for (int col = 0; col < GameMain.COLS; ++col) {//STUDENT NOTE: checks all cells in columns             
+				if (cells[row][col].content == Player.Empty) {//STUDENT NOTE: check if a cell is empty
+					return false; //STUDENT NOTE: it is not a draw if there is an empty cell  
 				}
 			}
 		}return true;//it is a draw if there is no empty cell
